@@ -56,8 +56,8 @@ castellatedMeshControls
     //    }
     //);
 
-    //refinementSurfaces
-    //{
+    refinementSurfaces
+    {
     //    europaschiff
 	//	{
 	//		level (4 4);
@@ -78,7 +78,7 @@ castellatedMeshControls
 	//	{
 	//		level (1 1);
 	//	}
-	//}   
+	}   
     resolveFeatureAngle 30;
     refinementRegions
     {
