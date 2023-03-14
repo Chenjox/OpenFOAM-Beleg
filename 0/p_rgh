@@ -1,0 +1,86 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.2.x                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      p_rgh;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [1 -1 -2 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField 
+{
+	// 1
+    Inlet
+    {
+        type zeroGradient;			//druckfreier Durchfluss
+    }
+
+	// 3
+    Outlet
+    {
+        			                //druckfreier Abfluss, der den WSP auf z=0 hält
+					                //outlet nach Erstellung auf WSP=z=0 versetzen
+					                //Befehl für Netzverschiebung
+        			                //transformPoints -translate "(0 0 -z)"
+        type totalPressure;			//druckfreis Ausströmen an der Atmosphäre
+        rho rho;
+        psi none;
+        gamma 1;
+        p0 uniform 0;
+        value uniform 0;
+        transformPoints -translate (0 0 -1.75);
+    }
+	
+	// 4
+	Top
+    {
+        type totalPressure;			//druckfreis Ausströmen an der Atmosphäre
+        rho rho;
+        psi none;
+        gamma 1;
+        p0 uniform 0;
+        value uniform 0;
+    }
+
+    WeirBottom
+    {
+        type            zeroGradient;
+    }	
+	
+	Walls
+    {
+        type            zeroGradient;
+    }
+	BottomTosbecken
+    {
+        type            zeroGradient;
+    }
+    BottomFrontWeir
+    {
+        type            zeroGradient;
+    }
+	
+	/*
+	sideSymmetry
+	{
+        type           symmetryPlane;	//symmetrische RB: wenn keine Wand erwünscht
+    }
+	defaultFaces
+    {
+        type            empty;			//Für 2D-Flächen optimal
+    }
+	*/
+}
+
+// ************************************************************************* //

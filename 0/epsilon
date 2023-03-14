@@ -1,0 +1,81 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      epsilon;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -3 0 0 0 0];
+
+internalField   uniform 4.39e-05;				//Standardwert aus weir-Tutorial
+
+boundaryField
+{
+	// 1
+    Inlet
+    {
+        type            fixedValue;
+        value           $internalField;			//zeigt auf internalField: s.o.
+    }
+
+	// 3
+	Outlet
+    {
+        type            inletOutlet;
+        inletValue      $internalField;			//zeigt auf internalField: s.o.
+        value           $internalField;			//zeigt auf internalField: s.o.
+    }
+	
+	// 4
+	Top
+    {
+        type            inletOutlet;
+        inletValue      $internalField;			//zeigt auf internalField: s.o.
+        value           $internalField;			//zeigt auf internalField: s.o.
+    }
+
+	WeirBottom
+    {
+        type            epsilonWallFunction;
+        value           uniform 1.11e-05;		//Veränderung zu "$internalField" möglich
+    }	
+	
+	Walls
+    {
+        type            epsilonWallFunction;
+        value           uniform 8.82e-06;		//Veränderung zu "$internalField" möglich
+    }
+	BottomTosbecken
+    {
+        type            epsilonWallFunction;
+        value           uniform 8.82e-06;		//Veränderung zu "$internalField" möglich
+    }
+    BottomFrontWeir
+    {
+        type            epsilonWallFunction;
+        value           uniform 8.82e-06;		//Veränderung zu "$internalField" möglich
+    }
+/*
+	sideSymmetry
+	{
+        type           symmetryPlane;			//symmetrische RB: wenn keine Wand erwünscht
+    }
+	defaultFaces
+    {
+        type            empty;					//Für 2D-Flächen optimal
+    }
+	*/	
+}
+
+
+// ************************************************************************* //

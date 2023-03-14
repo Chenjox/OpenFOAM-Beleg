@@ -1,0 +1,82 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.2.x                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      k;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform 4.14e-03;			//TKE-Wert
+
+boundaryField
+{
+	// 1
+    Inlet
+    {
+        type            fixedValue;
+        value           $internalField;		//zeigt auf internalField: s.o.
+    }
+
+	// 3
+    Outlet
+    {
+        type            inletOutlet;
+        inletValue      $internalField;		//zeigt auf internalField: s.o.
+        value           $internalField;		//zeigt auf internalField: s.o.
+    }
+	
+	// 4
+	Top
+    {
+        type            inletOutlet;
+        inletValue      $internalField;		//zeigt auf internalField: s.o.
+        value           $internalField;		//zeigt auf internalField: s.o.
+    }	
+	
+	// 5
+    WeirBottom
+    {
+        type            kqRWallFunction;
+        value           uniform 1.18e-03;	//Veränderung zu "$internalField" möglich
+    }
+	
+	// 5
+    Walls
+    {
+        type            kqRWallFunction;
+        value           uniform 4.7e-04;	//Veränderung zu "$internalField" möglich
+    }
+	BottomTosbecken
+    {
+        type            kqRWallFunction;
+        value           uniform 4.7e-04;	//Veränderung zu "$internalField" möglich
+    }
+    BottomFrontWeir
+    {
+        type            kqRWallFunction;
+        value           uniform 4.7e-04;	//Veränderung zu "$internalField" möglich
+    }
+	/*
+	sideSymmetry
+	{
+        type           symmetryPlane;			//symmetrische RB: wenn keine Wand erwünscht
+    }
+	defaultFaces
+    {
+        type            empty;					//Für 2D-Flächen optimal
+    }
+	*/	
+}
+
+// ************************************************************************* //

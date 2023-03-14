@@ -1,0 +1,59 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.4.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     interFoam;	//Solver
+
+startFrom       startTime; 	//startTime oder latestTime
+
+startTime       0;			//Erster Zeitschritt (Anfangsrandbedingung) der Simulation; spätere (ausgeschriebene) Zeitschritte möglich
+
+stopAt          endTime;
+
+endTime       	100; 		//Endzeitschritt Simulation
+
+deltaT          0.0001; 	//festgelegte Intervalle egal wenn adjustableTimeStep on (siehe unten)
+
+writeControl    adjustableRunTime; 
+
+writeInterval   2; 			//Ausgabeintervalle
+
+purgeWrite      0;			//0=aus | 10=nach 10 Zeitschritten wird der älteste gelöscht und der neue ausgeschrieben
+
+writeFormat     ascii;		//Dateiformat: ascii=lesbar; binär=Maschinenlesbar(kleiner)
+
+writePrecision  8;			//6 meist ausreichend
+
+writeCompression uncompressed;
+
+timeFormat      general;	
+
+timePrecision   8;
+
+runTimeModifiable yes; 		//controlDicht manipulierbar während rechnung 
+
+adjustTimeStep  on;  		//on bei Konvergenz denkbar: RECHNET COURANT ZAHL SELBER AUS!!!
+
+maxCo           0.2; 		//maxCourantZahl bei "adjustTimeStep  on": 0.9 maximal empfohlen
+maxAlphaCo      0.2; 		//siehe maxCo
+
+maxDeltaT       0.2; 		//maximales deltaT bei "adjustTimeStep  on"
+
+functions					//zusätzliche Ausgabefunktionen
+{
+
+}
+// ************************************************************************* //
