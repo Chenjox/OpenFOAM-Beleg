@@ -22,64 +22,63 @@ addLayers       on;
 
 geometry
 {
-    boe_backbord.stl            {type triSurfaceMesh; name boe_backbord;}
-	boe_steuerbord.stl          {type triSurfaceMesh; name boe_steuerbord;}
-	europaschiff.stl            {type triSurfaceMesh; name europaschiff;}
-	bsr_ein.stl             	{type triSurfaceMesh; name bsr_ein;}
-	bsr_aus.stl                 {type triSurfaceMesh; name bsr_aus;}
+    Toskoerper.stl       {type triSurfaceMesh; name toskoerper;}
+	Wehrruecken.stl      {type triSurfaceMesh; name Wehrruecken;}
+	WehrWaende.stl       {type triSurfaceMesh; name WehrWaende;}
 	
     Stufe3   
 	{
 		type 	searchableBox;
-		min 	(18 0 0);
+		min 	(0 1.5 0);
 		max 	(42.5 15.5 4);
 	}
 	
-	Stufe4
-	{
-		type 	searchableBox;
-		min 	(25 0 0);
-		max 	(35 15.5 2.5);
-	}
+	//Stufe4
+	//{
+	//	type 	searchableBox;
+	//	min 	(25 0 0);
+	//	max 	(35 15.5 2.5);
+	//}
 };
 
 castellatedMeshControls
 {
-    maxLocalCells 20000000;
-    maxGlobalCells 50000000;
+    maxLocalCells 1000000;
+    maxGlobalCells 2000000;
     minRefinementCells 3;
     nCellsBetweenLevels 2;
     maxLoadUnbalance 0.10;
-    features
-    (
-        {
-            file "europaschiff.eMesh";
-            level 3;
-        }
-    );
-    refinementSurfaces
-    {
-        europaschiff
-		{
-			level (4 4);
-		}   
-        bsr_ein
-		{
-			level (4 4);
-		}
-	    bsr_aus
-		{
-			level (4 4);
-		}
-		boe_backbord
-		{
-			level (3 3);
-		}
-		boe_steuerbord
-		{
-			level (1 1);
-		}
-	}   
+    //features
+    //(
+    //    {
+    //        file "europaschiff.eMesh";
+    //        level 3;
+    //    }
+    //);
+
+    //refinementSurfaces
+    //{
+    //    europaschiff
+	//	{
+	//		level (4 4);
+	//	}   
+    //    bsr_ein
+	//	{
+	//		level (4 4);
+	//	}
+	//    bsr_aus
+	//	{
+	//		level (4 4);
+	//	}
+	//	boe_backbord
+	//	{
+	//		level (3 3);
+	//	}
+	//	boe_steuerbord
+	//	{
+	//		level (1 1);
+	//	}
+	//}   
     resolveFeatureAngle 30;
     refinementRegions
     {
@@ -88,13 +87,13 @@ castellatedMeshControls
 			mode 		inside;
 			levels 		((1E15 2));
 		}
-		Stufe4
-		{
-			mode 		inside;
-			levels 		((1E15 3));
-		}
+		//Stufe4
+		//{
+		//	mode 		inside;
+		//	levels 		((1E15 3));
+		//}
     }   
-	locationInMesh (5 27.5 2);    
+	locationInMesh (2 3 3);    
     allowFreeStandingZoneFaces no;
 }
 
@@ -115,7 +114,7 @@ addLayersControls
     
     layers
     {
-        boe_backbord
+        Wehrruecken
 		{
 			nSurfaceLayers			10;
 		}
@@ -141,10 +140,12 @@ addLayersControls
     additionalReporting true;
 }
 
+/*
 meshQualityControls
 {
-  #include "meshQualityDict"
+  include "meshQualityDict"
 }
+*/
 
 debug 0;
 mergeTolerance 1.E-8;
