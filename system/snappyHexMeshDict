@@ -48,13 +48,13 @@ castellatedMeshControls
     minRefinementCells 3;
     nCellsBetweenLevels 2;
     maxLoadUnbalance 0.10;
-    //features
-    //(
+    features
+    (
     //    {
     //        file "europaschiff.eMesh";
     //        level 3;
     //    }
-    //);
+    );
 
     refinementSurfaces
     {
