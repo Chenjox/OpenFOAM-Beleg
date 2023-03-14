@@ -140,12 +140,12 @@ addLayersControls
     additionalReporting true;
 }
 
-/*
+
 meshQualityControls
 {
-  include "meshQualityDict"
+  //include "meshQualityDict"
 }
-*/
+
 
 debug 0;
 mergeTolerance 1.E-8;
