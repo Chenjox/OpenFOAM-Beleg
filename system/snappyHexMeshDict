@@ -16,84 +16,137 @@ FoamFile
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-castellatedMesh true;
-snap            true;
-addLayers       true;
+castellatedMesh on;
+snap            on;
+addLayers       on;
 
 geometry
 {
-    geometry.stl
-    {
-        type triSurfaceMesh;
-        regions
-        {
-            BottomFrontWeir
-            {
-                name BottomFrontWeir;
-            }
-            BottomTosbecken 
-            {
-                name BottomTosbecken;
-            }
-            Inlet
-            {
-                name Inlet;
-            }
-            Outlet
-            {
-                name Outlet;
-            }
-            Top
-            {
-                name Top;
-            }
-            Walls
-            {
-                name Walls;
-            }
-            WeirBottom
-            {
-                name WeirBottom;
-            }
-        }
-    }
+    boe_backbord.stl            {type triSurfaceMesh; name boe_backbord;}
+	boe_steuerbord.stl          {type triSurfaceMesh; name boe_steuerbord;}
+	europaschiff.stl            {type triSurfaceMesh; name europaschiff;}
+	bsr_ein.stl             	{type triSurfaceMesh; name bsr_ein;}
+	bsr_aus.stl                 {type triSurfaceMesh; name bsr_aus;}
+	
+    Stufe3   
+	{
+		type 	searchableBox;
+		min 	(18 0 0);
+		max 	(42.5 15.5 4);
+	}
+	
+	Stufe4
+	{
+		type 	searchableBox;
+		min 	(25 0 0);
+		max 	(35 15.5 2.5);
+	}
 };
 
 castellatedMeshControls
 {
-    maxLocalCells 100000;
-    maxGlobalCells 400000;
-    minRefinementCells 100;
-    nCellsBetweenLevels 3;
-
+    maxLocalCells 20000000;
+    maxGlobalCells 50000000;
+    minRefinementCells 3;
+    nCellsBetweenLevels 2;
+    maxLoadUnbalance 0.10;
     features
     (
+        {
+            file "europaschiff.eMesh";
+            level 3;
+        }
     );
-
     refinementSurfaces
     {
-        geometry.stl
-        {
-            level (0 0);
-            regions
-            {
-                NumberOne
-    		    {
-    		    	level (3 3);
-    		    }
-        	    NumberTwo
-    		    {
-    		    	level (2 2);
-    		    }
-            }
-        }
-    }
-
-    resolveFeatureAngle 60;
-
+        europaschiff
+		{
+			level (4 4);
+		}   
+        bsr_ein
+		{
+			level (4 4);
+		}
+	    bsr_aus
+		{
+			level (4 4);
+		}
+		boe_backbord
+		{
+			level (3 3);
+		}
+		boe_steuerbord
+		{
+			level (1 1);
+		}
+	}   
+    resolveFeatureAngle 30;
     refinementRegions
     {
-    }
-
-    locationInMesh (50 50 50);
+        Stufe3
+		{
+			mode 		inside;
+			levels 		((1E15 2));
+		}
+		Stufe4
+		{
+			mode 		inside;
+			levels 		((1E15 3));
+		}
+    }   
+	locationInMesh (5 27.5 2);    
+    allowFreeStandingZoneFaces no;
 }
+
+snapControls
+{
+    nSmoothPatch 5;
+    tolerance 1.0;
+    nSolveIter 300;
+    nRelaxIter 10;
+    nFeatureSnapIter 10;
+    implicitFeatureSnap true;
+    explicitFeatureSnap false;
+    multiRegionFeatureSnap false;
+}
+
+addLayersControls
+{
+    
+    layers
+    {
+        boe_backbord
+		{
+			nSurfaceLayers			10;
+		}
+    }  
+		
+	relativeSizes yes;       //false leads to absolute
+    expansionRatio 1.2;
+    finalLayerThickness 0.35;     //is relativeSizes are put to false, must be changed to firstLayerThickness
+    minThickness 0.0002;
+	nGrow 1;
+    featureAngle 60;   
+    slipFeatureAngle 70;
+    nRelaxIter 10;
+    nSmoothSurfaceNormals 3;
+    nSmoothNormals 100;
+    nSmoothThickness 0;
+    maxFaceThicknessRatio 0.5;  // 0.5
+    maxThicknessToMedialRatio 0.3; // 0.3
+    minMedianAxisAngle 80; // 80
+    nBufferCellsNoExtrude 1;
+    nLayerIter 100;
+    nRelaxedIter 50;   
+    additionalReporting true;
+}
+
+meshQualityControls
+{
+  #include "meshQualityDict"
+}
+
+debug 0;
+mergeTolerance 1.E-8;
+
+// ************************************************************************* //

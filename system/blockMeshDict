@@ -1,8 +1,8 @@
 /*--------------------------------*- C++ -*----------------------------------*\
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  v2206                                 |
-|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|  \\    /   O peration     | Version:  1.5                                   |
+|   \\  /    A nd           | Web:      http://www.OpenFOAM.org               |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
 FoamFile
@@ -13,74 +13,60 @@ FoamFile
     object      blockMeshDict;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+convertToMeters 1.;
 
-scale   1; // Alles in [m]
-
-vertices
+vertices        
 (
-    (0 1.5 0) //Wehrkörper
-    (9.014213562 1.5 0)
-    (9.014213562 4.5 0)
-    (0 4.5 0)
-    (0 1.5 6.75)
-    (9.014213562 1.5 6.75)
-    (9.014213562 4.5 6.75)
-    (0 4.5 6.75)
-    (9.014213562  0 0) //TosBecken
-    (20 0 0)
-    (20 6 0)
-    (9.014213562  6 0)
-    (9.014213562  0 6.75)
-    (20 0 6.75)
-    (20 6 6.75)
-    (9.014213562  6 6.75)
+    (0 0 0)  
+    (20 0 0)  
+    (20 6 0)  
+    (0 6 0)  
+    (0 0  6.75)  
+    (20 0 6.75)  
+    (20 6 6.75)  
+    (0 6  6.75)  
 );
 
-blocks // alle Zellen des Grundnetzes
+blocks          
 (
-    hex (0 1 2 3 4 5 6 7) (18 6 13) simpleGrading (1 2 3)
-    hex (8 9 10 11 12 13 14 15) (21 12 13) simpleGrading (1 2 3)
-); // so eingestellt, dass alle Zellen 0.5*0.5*0.519cm^3 groß sind
+    hex (0 1 2 3 4 5 6 7) (32 8 8) simpleGrading (1 1 1)
+);
 
-edges
+edges           
 (
 );
 
-boundary
+patches         
 (
-    inlet
-    {
-        type patch;
-        faces
-        (
-            (0 4 7 3)
-        );
-    }
-    outlet
-    {
-        type patch;
-        faces
-        (
-            (2 6 5 1)
-        );
-    }
-    lowerWall
-    {
-        type wall;
-        faces
-        (
-            (0 3 2 1)
-        );
-    }
-    upperWall
-    {
-        type patch;
-        faces
-        (
-            (4 5 6 7)
-        );
-    }
+    patch inlet
+    (
+        (0 4 7 3)
+    )
+    patch outlet
+    (
+        (2 6 5 1)
+    )
+    patch right
+    (
+        (1 5 4 0)
+    )
+    patch left
+    (
+        (3 7 6 2)
+    )
+    patch bottom
+    (
+        (0 3 2 1)
+    )
+    patch top
+    (
+        (4 5 6 7)
+    )
 );
 
-
+mergePatchPairs
+(
+);
 // ************************************************************************* //
+
+
