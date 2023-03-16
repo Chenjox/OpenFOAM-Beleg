@@ -62,22 +62,18 @@ castellatedMeshControls
 	//	{
 	//		level (4 4);
 	//	}   
-    //    bsr_ein
-	//	{
-	//		level (4 4);
-	//	}
-	//    bsr_aus
-	//	{
-	//		level (4 4);
-	//	}
-	//	boe_backbord
-	//	{
-	//		level (3 3);
-	//	}
-	//	boe_steuerbord
-	//	{
-	//		level (1 1);
-	//	}
+        toskoerper
+		{
+			level (4 4);
+		}
+	    Wehrruecken
+		{
+			level (4 4);
+		}
+		WehrWaende
+		{
+			level (3 3);
+		}
 	}   
     resolveFeatureAngle 30;
     refinementRegions
