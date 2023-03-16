@@ -51,7 +51,7 @@ castellatedMeshControls
     features
     (
         {
-            file "geometry.fms";
+            file "geometry.eMesh";
             level 3;
         }
     );
