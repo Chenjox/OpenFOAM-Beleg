@@ -29,8 +29,8 @@ geometry
     Stufe3   
 	{
 		type 	searchableBox;
-		min 	(0 1.5 0);
-		max 	(42.5 15.5 4);
+		min 	(0 1.5 3);
+		max 	(5.0 4.5 6);
 	}
 	
 	//Stufe4
@@ -50,10 +50,10 @@ castellatedMeshControls
     maxLoadUnbalance 0.10;
     features
     (
-    //    {
-    //        file "europaschiff.eMesh";
-    //        level 3;
-    //    }
+        {
+            file "geoemtry.fms";
+            level 3;
+        }
     );
 
     refinementSurfaces
