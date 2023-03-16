@@ -22,25 +22,26 @@ internalField   uniform 0;							//Luft überall voreingestellt
 boundaryField
 {
 	
-    Inlet
+    inlet
     {
 		type            variableHeightFlowRate;		//Füllung variiert mit Wasserstand
         lowerBound      0;
         upperBound      0.9;
         value           uniform 0;
     }
-    Outlet
+    outlet
     {
 		type            inletOutlet;				//Wasser kann frei aus-/einströmen
         inletValue      uniform 0;					//Wassereintritt unterbinden
         value           uniform 0;
 	}
-	Top
+	top
     {
         type            inletOutlet;				//Wasser kann frei aus-/einströmen
         inletValue      uniform 0;					//Wassereintritt unterbinden
         value           uniform 0;
     }
+    
     /*
     WeirBottom
     {

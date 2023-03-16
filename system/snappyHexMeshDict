@@ -51,7 +51,7 @@ castellatedMeshControls
     features
     (
         {
-            file "geoemtry.fms";
+            file "geometry.fms";
             level 3;
         }
     );
