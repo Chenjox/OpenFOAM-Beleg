@@ -26,11 +26,18 @@ geometry
 	Wehrruecken.stl      {type triSurfaceMesh; name Wehrruecken;}
 	WehrWaende.stl       {type triSurfaceMesh; name WehrWaende;}
 	
-    Stufe3   
+    Stufe3Wehrkrone
 	{
 		type 	searchableBox;
-		min 	(0 1.5 3);
-		max 	(5.0 4.5 6);
+		min 	(0 1.4 3);
+		max 	(5.0 4.6 5);
+	}
+
+    Stufe3Tosbecken
+	{
+		type 	searchableBox;
+		min 	(5 -1 0);
+		max 	(20 7 2.00);
 	}
 	
 	//Stufe4
@@ -72,17 +79,22 @@ castellatedMeshControls
 		}
 		WehrWaende
 		{
-			level (3 3);
+			level (2 2);
 		}
 	}   
     resolveFeatureAngle 30;
     refinementRegions
     {
-        Stufe3
+        Stufe3Wehrkrone
 		{
 			mode 		inside;
 			levels 		((1E15 2));
 		}
+        Stufe3Tosbecken
+        {
+            mode 		inside;
+			levels 		((1E15 2));
+        }
 		//Stufe4
 		//{
 		//	mode 		inside;
@@ -97,7 +109,7 @@ snapControls
 {
     nSmoothPatch 5;
     tolerance 1.0;
-    nSolveIter 300;
+    nSolveIter 100;
     nRelaxIter 10;
     nFeatureSnapIter 10;
     implicitFeatureSnap true;
@@ -110,7 +122,11 @@ addLayersControls
     
     layers
     {
-        Wehrruecken
+        Wehrruecken_Wehrruecken
+		{
+			nSurfaceLayers			10;
+		}
+        bottom
 		{
 			nSurfaceLayers			10;
 		}
