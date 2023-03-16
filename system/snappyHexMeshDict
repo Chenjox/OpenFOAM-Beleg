@@ -57,10 +57,10 @@ castellatedMeshControls
     maxLoadUnbalance 0.10;
     features
     (
-        {
-            file "geometry.eMesh";
-            level 2;
-        }
+    //    {
+    //        file "geometry.eMesh";
+    //        level 2;
+    //    }
     );
 
     refinementSurfaces
@@ -124,11 +124,11 @@ addLayersControls
     {
         Wehrruecken
 		{
-			nSurfaceLayers			10;
+			nSurfaceLayers			5;
 		}
         bottom
 		{
-			nSurfaceLayers			10;
+			nSurfaceLayers			5;
 		}
     }  
 		
@@ -156,7 +156,7 @@ addLayersControls
 meshQualityControls
 {
   // Maximum non-orthogonality allowed. Set to 180 to disable.
-    maxNonOrtho 170;
+    maxNonOrtho 180;
 
     // Max skewness allowed. Set to <0 to disable.
     maxBoundarySkewness 20;
