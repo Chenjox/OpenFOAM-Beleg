@@ -75,11 +75,11 @@ castellatedMeshControls
 		}
         WehrWaende
 		{
-			level (1 1);
+			level (3 3);
 		}
 	    Wehrruecken
 		{
-			level (4 4);
+			level (5 5);
 		}
 	}   
     resolveFeatureAngle 30;
@@ -88,12 +88,12 @@ castellatedMeshControls
         Stufe3Wehrkrone
 		{
 			mode 		inside;
-			levels 		((1E15 2));
+			levels 		((1E15 4));
 		}
         Stufe3Tosbecken
         {
             mode 		inside;
-			levels 		((1E15 2));
+			levels 		((1E15 4));
         }
 		//Stufe4
 		//{
@@ -124,11 +124,15 @@ addLayersControls
     {
         Wehrruecken
 		{
-			nSurfaceLayers			5;
+			nSurfaceLayers			10;
 		}
         bottom
 		{
 			nSurfaceLayers			5;
+		}
+        Toskoerper
+		{
+			nSurfaceLayers			6;
 		}
     }  
 		
