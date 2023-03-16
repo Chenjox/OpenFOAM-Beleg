@@ -59,7 +59,7 @@ castellatedMeshControls
     (
         {
             file "geometry.eMesh";
-            level 3;
+            level 2;
         }
     );
 
@@ -73,13 +73,13 @@ castellatedMeshControls
 		{
 			level (4 4);
 		}
+        WehrWaende
+		{
+			level (1 1);
+		}
 	    Wehrruecken
 		{
 			level (4 4);
-		}
-		WehrWaende
-		{
-			level (2 2);
 		}
 	}   
     resolveFeatureAngle 30;
