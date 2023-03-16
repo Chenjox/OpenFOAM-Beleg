@@ -156,7 +156,7 @@ addLayersControls
 meshQualityControls
 {
   // Maximum non-orthogonality allowed. Set to 180 to disable.
-    maxNonOrtho 180;
+    maxNonOrtho 170;
 
     // Max skewness allowed. Set to <0 to disable.
     maxBoundarySkewness 20;
@@ -211,7 +211,7 @@ meshQualityControls
     // Advanced
 
     // Number of error distribution iterations
-    nSmoothScale 4;
+    nSmoothScale 10;
     // amount to scale back displacement at error points
     errorReduction 0.75;
 
