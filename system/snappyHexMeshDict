@@ -122,7 +122,7 @@ addLayersControls
     
     layers
     {
-        Wehrruecken_Wehrruecken
+        Wehrruecken
 		{
 			nSurfaceLayers			10;
 		}
