@@ -18,7 +18,7 @@ FoamFile
 
 surfaceFile "constant/triSurface/geometry.fms";	//Lese diese Geometriedatei ein (.stl; .obj; .fms; .vtk). Fluidvolumen!
 
-maxCellSize 0.15; 			//[m]
+maxCellSize 0.3; 			//[m]
 
 //Ab hier zahlreiche Optionale Einstellungen
 
@@ -32,12 +32,12 @@ localRefinement	//Verfeinerung an Oberflächen
     "WeirBottom"
     {
 		refinementThickness 0.4;
-        cellSize 0.075;
+        cellSize 0.15;
     }
 	"BottomTosbecken"
     {
 		refinementThickness 0.4;
-        cellSize 0.075;
+        cellSize 0.15;
     }
 	//"BottomTosbecken"
 	//{
@@ -51,7 +51,7 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
 	tosbecken_koerper
 	{
 		type box;
-		cellSize 0.075;
+		cellSize 0.15;
 		centre	(13.50 3.0 1.375);
 		lengthX	13.0;
 		lengthY	6.0;
@@ -71,7 +71,7 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
 	wehrkronenverfeinerung
 	{
 		type box;
-		cellSize 0.075;
+		cellSize 0.15;
 		centre	(2.0 3.0 4.175);
 		lengthX	4.2;
 		lengthY	3.1;
@@ -169,11 +169,11 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
         
 		"WeirBottom"
         {
-            nLayers           3;			//Anzahl der Grenzschichtzellen
+            nLayers           6;			//Anzahl der Grenzschichtzellen
 
-            thicknessRatio    1.1;			//Anstiegfaktor der Zelldicke
+            thicknessRatio    1.2;			//Anstiegfaktor der Zelldicke
 
-            maxFirstLayerThickness 0.003;	//Mindestdicke der ersten Zellschicht
+            maxFirstLayerThickness 0.0005;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
         }
@@ -190,7 +190,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
         }
 		"BottomTosbecken"
         {
-            nLayers           6;			//Anzahl der Grenzschichtzellen
+            nLayers           3;			//Anzahl der Grenzschichtzellen
 
             thicknessRatio    1.1;			//Anstiegfaktor der Zelldicke
 
