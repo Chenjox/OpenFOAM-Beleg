@@ -285,7 +285,7 @@ renameBoundary
     }
 }
 
-enforceGeometryConstraints 0;	//stops the meshing process when it is not possible to capture all features of the input geometry
+enforceGeometryConstraints 1;	//stops the meshing process when it is not possible to capture all features of the input geometry
 
 
 // ************************************************************************* //
