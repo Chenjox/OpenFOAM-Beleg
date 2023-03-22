@@ -32,11 +32,11 @@ localRefinement	//Verfeinerung an Oberflächen
     "WeirBottom"
     {
 		refinementThickness 0.2;
-        cellSize 0.2;
+        cellSize 0.15;
     }
 	"BottomTosbecken"
     {
-        cellSize 0.2;
+        cellSize 0.15;
     }
 	//"BottomTosbecken"
 	//{
@@ -50,7 +50,7 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
 	tosbecken_koerper
 	{
 		type box;
-		cellSize 0.2;
+		cellSize 0.15;
 		centre	(13.50 3.0 1.375);
 		lengthX	13.0;
 		lengthY	6.0;
@@ -60,7 +60,7 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
 	wehrkronenverfeinerung
 	{
 		type box;
-		cellSize 0.2;
+		cellSize 0.15;
 		centre	(3.2 3.0 2.7);
 		lengthX	3.6;
 		lengthY	3.0;
