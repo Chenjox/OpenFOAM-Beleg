@@ -31,7 +31,7 @@ localRefinement	//Verfeinerung an Oberflächen
 {
     "WeirBottom"
     {
-		refinementThickness 0.2;
+		refinementThickness 0.4;
         cellSize 0.15;
     }
 	"BottomTosbecken"
@@ -57,17 +57,17 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
 		lengthZ	1.5;
 	}
 
-	wehrkronenverfeinerung
-	{
-		type box;
-		cellSize 0.15;
-		centre	(3.2 3.0 2.7);
-		lengthX	3.6;
-		lengthY	3.0;
-		lengthZ	3.6;
-	}
+	//wehrkronenverfeinerung
+	//{
+	//	type box;
+	//	cellSize 0.15;
+	//	centre	(3.2 3.0 2.7);
+	//	lengthX	3.6;
+	//	lengthY	3.0;
+	//	lengthZ	3.6;
+	//}
 
-	wehrkronenverfeinerung2
+	wehrkronenverfeinerung
 	{
 		type box;
 		cellSize 0.15;
@@ -165,7 +165,8 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
 
     patchBoundaryLayers
     {
-        "WeirBottom"
+        /**
+		"WeirBottom"
         {
             nLayers           3;			//Anzahl der Grenzschichtzellen
 
@@ -175,7 +176,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
 
             allowDiscontinuity 0;
         }
-		/**
+		
 		"Walls"
         {
             nLayers           4;			//Anzahl der Grenzschichtzellen
