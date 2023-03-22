@@ -18,7 +18,7 @@ FoamFile
 
 surfaceFile "constant/triSurface/geometry.fms";	//Lese diese Geometriedatei ein (.stl; .obj; .fms; .vtk). Fluidvolumen!
 
-maxCellSize 0.075; 			//[m]
+maxCellSize 0.03; 			//[m]
 
 //Ab hier zahlreiche Optionale Einstellungen
 
