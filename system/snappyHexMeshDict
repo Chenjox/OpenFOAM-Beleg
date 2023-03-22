@@ -79,7 +79,7 @@ castellatedMeshControls
 		}
 	    Wehrruecken
 		{
-			level (5 5);
+			level (2 2);
 		}
 	}   
     resolveFeatureAngle 30;
@@ -88,12 +88,12 @@ castellatedMeshControls
         Stufe3Wehrkrone
 		{
 			mode 		inside;
-			levels 		((1E15 4));
+			levels 		((1E15 3));
 		}
         Stufe3Tosbecken
         {
             mode 		inside;
-			levels 		((1E15 4));
+			levels 		((1E15 3));
         }
 		//Stufe4
 		//{
@@ -160,7 +160,7 @@ addLayersControls
 meshQualityControls
 {
   // Maximum non-orthogonality allowed. Set to 180 to disable.
-    maxNonOrtho 45;
+    maxNonOrtho 165;
 
     // Max skewness allowed. Set to <0 to disable.
     maxBoundarySkewness 20;
