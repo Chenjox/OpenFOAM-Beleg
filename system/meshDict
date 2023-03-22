@@ -175,7 +175,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
 
             allowDiscontinuity 0;
         }
-		
+		/**
 		"Walls"
         {
             nLayers           4;			//Anzahl der Grenzschichtzellen
@@ -206,6 +206,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
 
             allowDiscontinuity 0;
         }
+		*/
     }
 
     optimiseLayer 1;
