@@ -1,0 +1,7 @@
+polyMesh/sets/*
+polyMesh/boundary
+polyMesh/faces
+polyMesh/meshMetaDict
+polyMesh/neighbour
+polyMesh/owner
+polyMesh/points
