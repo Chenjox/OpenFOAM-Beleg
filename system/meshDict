@@ -166,7 +166,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
 
     patchBoundaryLayers
     {
-        /**
+        
 		"WeirBottom"
         {
             nLayers           3;			//Anzahl der Grenzschichtzellen
@@ -208,10 +208,28 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
 
             allowDiscontinuity 0;
         }
-		*/
     }
 
     optimiseLayer 1;
+
+	optimisationParameters {
+		// number of iterations in the procedure
+		// for redcing normal variation (optional)
+		nSmoothNormals 10;
+		// maximum nurtber of iterations
+		// of the whole procedure (optional)
+		maxNumIterations 20;
+		// ratio between the maxximum layer thickness
+		// and the estimated feature Size (optional)
+		featureSizeFactor 0.4;
+		// activate 1 or deactivate C) calculation of normal
+		// (optional)
+		reCalculateNormals 1;
+		// maximum allowed thickness variation of thickness
+		// between two neighbouring points, divided by
+		// the distance between the points (optional)
+		relThicknessTol 0.1;
+	}
 }
 
 renameBoundary
