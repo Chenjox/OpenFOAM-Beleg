@@ -32,12 +32,13 @@ localRefinement	//Verfeinerung an Oberflächen
     "WeirBottom"
     {
 		refinementThickness 0.4;
-        cellSize 0.15;
+        cellSize 0.075;
     }
-	//"BottomTosbecken"
-    //{
-    //    cellSize 0.15;
-    //}
+	"BottomTosbecken"
+    {
+		refinementThickness 0.4;
+        cellSize 0.075;
+    }
 	//"BottomTosbecken"
 	//{
 	//	additionalRefinementLevels 3; 	//relative Verfeinerung bezüglich maxCellSize
@@ -47,15 +48,15 @@ localRefinement	//Verfeinerung an Oberflächen
 
 objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
 {
-	//tosbecken_koerper
-	//{
-	//	type box;
-	//	cellSize 0.15;
-	//	centre	(13.50 3.0 1.375);
-	//	lengthX	13.0;
-	//	lengthY	6.0;
-	//	lengthZ	1.5;
-	//}
+	tosbecken_koerper
+	{
+		type box;
+		cellSize 0.075;
+		centre	(13.50 3.0 1.375);
+		lengthX	13.0;
+		lengthY	6.0;
+		lengthZ	1.5;
+	}
 
 	//wehrkronenverfeinerung
 	//{
@@ -70,7 +71,7 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
 	wehrkronenverfeinerung
 	{
 		type box;
-		cellSize 0.15;
+		cellSize 0.075;
 		centre	(2.0 3.0 4.175);
 		lengthX	4.2;
 		lengthY	3.1;
