@@ -34,10 +34,10 @@ localRefinement	//Verfeinerung an Oberflächen
 		refinementThickness 0.4;
         cellSize 0.15;
     }
-	"BottomTosbecken"
-    {
-        cellSize 0.15;
-    }
+	//"BottomTosbecken"
+    //{
+    //    cellSize 0.15;
+    //}
 	//"BottomTosbecken"
 	//{
 	//	additionalRefinementLevels 3; 	//relative Verfeinerung bezüglich maxCellSize
@@ -47,15 +47,15 @@ localRefinement	//Verfeinerung an Oberflächen
 
 objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
 {
-	tosbecken_koerper
-	{
-		type box;
-		cellSize 0.15;
-		centre	(13.50 3.0 1.375);
-		lengthX	13.0;
-		lengthY	6.0;
-		lengthZ	1.5;
-	}
+	//tosbecken_koerper
+	//{
+	//	type box;
+	//	cellSize 0.15;
+	//	centre	(13.50 3.0 1.375);
+	//	lengthX	13.0;
+	//	lengthY	6.0;
+	//	lengthZ	1.5;
+	//}
 
 	//wehrkronenverfeinerung
 	//{
