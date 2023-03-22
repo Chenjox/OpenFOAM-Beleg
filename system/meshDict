@@ -67,6 +67,16 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
 		lengthZ	3.6;
 	}
 
+	wehrkronenverfeinerung2
+	{
+		type box;
+		cellSize 0.15;
+		centre	(2.0 3.0 4.175);
+		lengthX	4.2;
+		lengthY	3.1;
+		lengthZ	0.6;
+	}
+
 	/*
 	cone_name	//hollowcone_name
 	{
@@ -149,9 +159,9 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
 
 boundaryLayers		//Grenzschichtzellen an Oberfläche
 {
-//    nLayers 3;
-//    thicknessRatio 1.2;
-//    maxFirstLayerThickness 0.5;
+    nLayers 3;
+    thicknessRatio 1.2;
+    maxFirstLayerThickness 0.5;
 
     patchBoundaryLayers
     {
@@ -161,7 +171,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
 
             thicknessRatio    1.1;			//Anstiegfaktor der Zelldicke
 
-            maxFirstLayerThickness 0.0005;	//Mindestdicke der ersten Zellschicht
+            maxFirstLayerThickness 0.003;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
         }
@@ -172,7 +182,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
 
             thicknessRatio    1.1;			//Anstiegfaktor der Zelldicke
 
-            maxFirstLayerThickness 0.0035;	//Mindestdicke der ersten Zellschicht
+            maxFirstLayerThickness 0.003;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
         }
@@ -182,7 +192,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
 
             thicknessRatio    1.1;			//Anstiegfaktor der Zelldicke
 
-            maxFirstLayerThickness 0.0035;	//Mindestdicke der ersten Zellschicht
+            maxFirstLayerThickness 0.002;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
         }
@@ -192,7 +202,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
 
             thicknessRatio    1.1;			//Anstiegfaktor der Zelldicke
 
-            maxFirstLayerThickness 0.0035;	//Mindestdicke der ersten Zellschicht
+            maxFirstLayerThickness 0.002;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
         }
