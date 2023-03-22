@@ -71,15 +71,15 @@ castellatedMeshControls
 	//	}   
         toskoerper
 		{
-			level (4 4);
+			level (3 3);
 		}
         WehrWaende
 		{
-			level (3 3);
+			level (2 2);
 		}
 	    Wehrruecken
 		{
-			level (2 2);
+			level (3 3);
 		}
 	}   
     resolveFeatureAngle 30;
@@ -108,7 +108,7 @@ castellatedMeshControls
 snapControls
 {
     nSmoothPatch 5;
-    tolerance 1.0;
+    tolerance 2.0;
     nSolveIter 100;
     nRelaxIter 10;
     nFeatureSnapIter 10;
@@ -124,7 +124,7 @@ addLayersControls
     {
         Wehrruecken
 		{
-			nSurfaceLayers			10;
+			nSurfaceLayers			5;
 		}
         bottom
 		{
@@ -141,9 +141,9 @@ addLayersControls
     finalLayerThickness 0.35;     //is relativeSizes are put to false, must be changed to firstLayerThickness
     minThickness 0.0002;
 	nGrow 1;
-    featureAngle 60;   
+    featureAngle 170;   
     slipFeatureAngle 70;
-    nRelaxIter 100;
+    nRelaxIter 30;
     nSmoothSurfaceNormals 3;
     nSmoothNormals 100;
     nSmoothThickness 0;
@@ -151,8 +151,8 @@ addLayersControls
     maxThicknessToMedialRatio 0.3; // 0.3
     minMedianAxisAngle 80; // 80
     nBufferCellsNoExtrude 1;
-    nLayerIter 100;
-    nRelaxedIter 50;   
+    nLayerIter 100; // Anzahl der Layer Iterationen
+    nRelaxedIter 50; // Anzahl der Iterationen nach denen die laxeren QualityControls benutzt werden.
     additionalReporting true;
 }
 
@@ -160,7 +160,7 @@ addLayersControls
 meshQualityControls
 {
   // Maximum non-orthogonality allowed. Set to 180 to disable.
-    maxNonOrtho 165;
+    maxNonOrtho 180;
 
     // Max skewness allowed. Set to <0 to disable.
     maxBoundarySkewness 20;
