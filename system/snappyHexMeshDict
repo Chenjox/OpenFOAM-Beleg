@@ -16,221 +16,84 @@ FoamFile
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-castellatedMesh on;
-snap            on;
-addLayers       off;
+castellatedMesh true;
+snap            true;
+addLayers       true;
 
 geometry
 {
-    Toskoerper.stl       {type triSurfaceMesh; name toskoerper;}
-	Wehrruecken.stl      {type triSurfaceMesh; name Wehrruecken;}
-	WehrWaende.stl       {type triSurfaceMesh; name WehrWaende;}
-	
-    Stufe3Wehrkrone
-	{
-		type 	searchableBox;
-		min 	(0 1.4 3);
-		max 	(5.0 4.6 5);
-	}
-
-    Stufe3Tosbecken
-	{
-		type 	searchableBox;
-		min 	(5 -1 0);
-		max 	(20 7 2.00);
-	}
-	
-	//Stufe4
-	//{
-	//	type 	searchableBox;
-	//	min 	(25 0 0);
-	//	max 	(35 15.5 2.5);
-	//}
+    geometry.stl
+    {
+        type triSurfaceMesh;
+        regions
+        {
+            BottomFrontWeir
+            {
+                name BottomFrontWeir;
+            }
+            BottomTosbecken 
+            {
+                name BottomTosbecken;
+            }
+            Inlet
+            {
+                name Inlet;
+            }
+            Outlet
+            {
+                name Outlet;
+            }
+            Top
+            {
+                name Top;
+            }
+            Walls
+            {
+                name Walls;
+            }
+            WeirBottom
+            {
+                name WeirBottom;
+            }
+        }
+    }
 };
 
 castellatedMeshControls
 {
-    maxLocalCells 1000000;
-    maxGlobalCells 1250000;
-    minRefinementCells 3;
-    nCellsBetweenLevels 2;
-    maxLoadUnbalance 0.10;
+    maxLocalCells 100000;
+    maxGlobalCells 400000;
+    minRefinementCells 100;
+    nCellsBetweenLevels 3;
+
     features
     (
-    //    {
-    //        file "geometry.eMesh";
-    //        level 2;
-    //    }
     );
 
     refinementSurfaces
     {
-    //    europaschiff
-	//	{
-	//		level (4 4);
-	//	}   
-        toskoerper
-		{
-			level (3 3);
-		}
-        WehrWaende
-		{
-			level (2 2);
-		}
-	    Wehrruecken
-		{
-			level (3 3);
-		}
-	}   
-    resolveFeatureAngle 30;
+        geometry.stl
+        {
+            level (0 0);
+            regions
+            {
+                NumberOne
+    		    {
+    		    	level (3 3);
+    		    }
+        	    NumberTwo
+    		    {
+    		    	level (2 2);
+    		    }
+            }
+        }
+    }
+
+    resolveFeatureAngle 60;
+
     refinementRegions
     {
-        Stufe3Wehrkrone
-		{
-			mode 		inside;
-			levels 		((1E15 3));
-		}
-        Stufe3Tosbecken
-        {
-            mode 		inside;
-			levels 		((1E15 3));
-        }
-		//Stufe4
-		//{
-		//	mode 		inside;
-		//	levels 		((1E15 3));
-		//}
-    }   
-	locationInMesh (10 3 3);    
-    allowFreeStandingZoneFaces no;
-}
-
-snapControls
-{
-    nSmoothPatch 5;
-    tolerance 2.0;
-    nSolveIter 100;
-    nRelaxIter 10;
-    nFeatureSnapIter 10;
-    implicitFeatureSnap true;
-    explicitFeatureSnap false;
-    multiRegionFeatureSnap false;
-}
-
-addLayersControls
-{
-    
-    layers
-    {
-        Wehrruecken
-		{
-			nSurfaceLayers			5;
-		}
-        bottom
-		{
-			nSurfaceLayers			5;
-		}
-        Toskoerper
-		{
-			nSurfaceLayers			6;
-		}
-    }  
-		
-	relativeSizes yes;       //false leads to absolute
-    expansionRatio 1.2;
-    finalLayerThickness 0.35;     //is relativeSizes are put to false, must be changed to firstLayerThickness
-    minThickness 0.0002;
-
-	nGrow 1;
-    featureAngle 170;   
-    slipFeatureAngle 70;
-    nRelaxIter 30;
-    nSmoothSurfaceNormals 3;
-    nSmoothNormals 100;
-    nSmoothThickness 0;
-    maxFaceThicknessRatio 0.5;  // 0.5
-    maxThicknessToMedialRatio 0.3; // 0.3
-    minMedianAxisAngle 80; // 80
-    nBufferCellsNoExtrude 1;
-    nLayerIter 100; // Anzahl der Layer Iterationen
-    nRelaxedIter 50; // Anzahl der Iterationen nach denen die laxeren QualityControls benutzt werden.
-    additionalReporting true;
-}
-
-
-meshQualityControls
-{
-  // Maximum non-orthogonality allowed. Set to 180 to disable.
-    maxNonOrtho 180;
-
-    // Max skewness allowed. Set to <0 to disable.
-    maxBoundarySkewness 20;
-    maxInternalSkewness 4;
-
-    // Max concaveness allowed. Is angle (in degrees) below which concavity
-    // is allowed. 0 is straight face, <0 would be convex face.
-    // Set to 180 to disable.
-    maxConcave 90;
-
-    // Minimum pyramid volume. Is absolute volume of cell pyramid.
-    // Set to a sensible fraction of the smallest cell volume expected.
-    // Set to very negative number (e.g. -1E30) to disable.
-    minVol -1e13;
-
-    // Minimum quality of the tet formed by the face-centre
-    // and variable base point minimum decomposition triangles and
-    // the cell centre. This has to be a positive number for tracking
-    // to work. Set to very negative number (e.g. -1E30) to
-    // disable.
-    //    <0 = inside out tet,
-    //     0 = flat tet
-    //     1 = regular tet
-    minTetQuality 1e-15;
-
-    // Minimum face area. Set to <0 to disable.
-    minArea -1;
-
-    // Minimum face twist. Set to <-1 to disable. dot product of face normal
-    // and face centre triangles normal
-    minTwist 0.02;
-
-    // minimum normalised cell determinant
-    // 1 = hex, <= 0 = folded or flattened illegal cell
-    minDeterminant 0.001;
-
-    // minFaceWeight (0 -> 0.5)
-    minFaceWeight 0.05;
-
-    // minVolRatio (0 -> 1)
-    minVolRatio 0.01;
-
-    // must be >0 for Fluent compatibility
-    minTriangleTwist -1;
-
-    //- if >0 : preserve single cells with all points on the surface if the
-    //  resulting volume after snapping (by approximation) is larger than
-    //  minVolCollapseRatio times old volume (i.e. not collapsed to flat cell).
-    //  If <0 : delete always.
-    minVolCollapseRatio 0.5;
-
-    // Advanced
-
-    // Number of error distribution iterations
-    nSmoothScale 10;
-    // amount to scale back displacement at error points
-    errorReduction 0.75;
-
-    // Optional : some meshing phases allow usage of relaxed rules.
-    // See e.g. addLayersControls::nRelaxedIter.
-    relaxed
-    {
-        //- Maximum non-orthogonality allowed. Set to 180 to disable.
-        maxNonOrtho 75;
     }
+
+    locationInMesh (50 50 50);
 }
-
-
-debug 0;
-mergeTolerance 1.E-8;
-
-// ************************************************************************* //

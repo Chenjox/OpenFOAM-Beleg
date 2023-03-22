@@ -41,7 +41,6 @@ boundaryField
         inletValue      uniform 0;					//Wassereintritt unterbinden
         value           uniform 0;
     }
-    /*
     WeirBottom
     {
         type            zeroGradient;
@@ -58,7 +57,6 @@ boundaryField
     {
         type            zeroGradient;
     }
-    */
 }
 
 // ************************************************************************* //

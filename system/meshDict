@@ -1,0 +1,259 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                |
+| \\      /  F ield         | cfMesh: A library for mesh generation          |
+|  \\    /   O peration     |                                                |
+|   \\  /    A nd           | Author: Franjo Juretic                         |
+|    \\/     M anipulation  | E-mail: franjo.juretic@c-fields.com            |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version   2.0;
+    format    ascii;
+    class     dictionary;
+    location  "system";
+    object    meshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+surfaceFile "constant/triSurface/geometry.fms";	//Lese diese Geometriedatei ein (.stl; .obj; .fms; .vtk). Fluidvolumen!
+
+maxCellSize 0.075; 			//[m]
+
+//Ab hier zahlreiche Optionale Einstellungen
+
+//minCellSize 0.03;			//kleinste Zellgröße. Evtl. konflikt mit Grenzschichten oder Verfeinerungen!
+
+//boundaryCellSize 0.1;	//Oberflächennzellgröße[m]
+//boundaryCellSizeRefinementThickness 0.1;	//max. Oberflächennzellverfeinerungsentfernung[m]
+
+localRefinement	//Verfeinerung an Oberflächen
+{
+    "WeirBottom"
+    {
+		refinementThickness 0.2;
+        cellSize 0.2;
+    }
+	"BottomTosbecken"
+    {
+        cellSize 0.2;
+    }
+	//"BottomTosbecken"
+	//{
+	//	additionalRefinementLevels 3; 	//relative Verfeinerung bezüglich maxCellSize
+	//	refinementThickness 0.05;		//Verfeinerungsschichtdicke bezüglich maxCellSize
+	//}
+}
+
+objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
+{
+	tosbecken_koerper
+	{
+		type box;
+		cellSize 0.2;
+		centre	(13.50 3.0 1.375);
+		lengthX	13.0;
+		lengthY	6.0;
+		lengthZ	1.5;
+	}
+
+	wehrkronenverfeinerung
+	{
+		type box;
+		cellSize 0.2;
+		centre	(3.2 3.0 2.7);
+		lengthX	3.6;
+		lengthY	3.0;
+		lengthZ	3.6;
+	}
+
+	/*
+	cone_name	//hollowcone_name
+	{
+		type cone;	//hollowCone;
+		additionalRefinementLevels 2;	//relative Verfeinerung bezüglich maxCellSize
+		p0				(0 0 0);	//Anfangspunkt Zylinder
+		p1				(1 1 1);	//Endpunkt Zylinder
+		radius0			2;			//Radius am Anfangspunkt
+		radius1			2;			//Radius am Endpunkt
+		//radius0_Inner	2;			//Innerer Radius am Anfangspunkt
+		//radius0_Outer	3;			//Äüßerer Radius am Anfangspunkt
+		//radius1_Inner	3;			//Innerer Radius am Endpunkt
+		//radius0_Outer	4;			//Äüßerer Radius am Endpunkt
+	}*/
+
+	//sphere 	(siehe Handbuch)
+	//line 		(siehe Handbuch)
+
+}
+
+/*surfaceMeshRefinement		//Oberflächenverfeinerung mithilfe von 3D-Dateien (stl; step, obj, etc.)
+{
+	deck
+	{
+		surfaceFile "model.obj";
+		cellSize	0.01;				//[m]
+		//additionalRefinementLevels 2;	//relative Verfeinerung bezüglich maxCellSize
+		//refinementThickness 0.05;		//Verfeinerungsschichtdicke bezüglich maxCellSize
+	}
+}*/
+
+/*edgeMeshRefinement
+{
+	edgeMeshExample
+	{
+		edgeFile 					"model.obj";	//.stl nicht möglich
+		additionalRefinementLevels 	5;
+		refinementThickness 		0.15;
+	}
+	cellSizeExample
+	{
+		edgeFile 					"model.obj";
+		cellSize					0.02;
+	}
+
+}*/
+
+//keepCellsIntersectingBoundary 0;	//entfernt zu kleine Volumen im Vergleich zur Zellgröße
+//keepCellsIntersectingPatches 1;	//behält zu kleine Volumen im Vergleich zur Zellgröße
+//checkForGluedMesh 1;				//nur wenn "keepCellsIntersectingPatches 1;": entfernt Verbundungen zwischen getrennten Volumen
+
+/*removeCellsIntersectingBoundary
+{
+	"basins"
+	{
+		keepCells 0;
+	}
+}*/
+
+/*anisotropicSources
+{
+	planeExample
+	{
+		type plane;
+		normal 	(1 0 0);
+		origin	(2 0 0);
+		scalingDistance 0.1;
+		scalingFactor 1;
+	}
+	planeExample2
+	{
+		type plane;
+		normal 	(0 0 1);
+		origin	(0 0 1.2);
+		scalingDistance 0.5;
+		scalingFactor 1;
+	}
+}*/
+
+
+boundaryLayers		//Grenzschichtzellen an Oberfläche
+{
+//    nLayers 3;
+//    thicknessRatio 1.2;
+//    maxFirstLayerThickness 0.5;
+
+    patchBoundaryLayers
+    {
+        "WeirBottom"
+        {
+            nLayers           3;			//Anzahl der Grenzschichtzellen
+
+            thicknessRatio    1.1;			//Anstiegfaktor der Zelldicke
+
+            maxFirstLayerThickness 0.0005;	//Mindestdicke der ersten Zellschicht
+
+            allowDiscontinuity 0;
+        }
+		
+		"Walls"
+        {
+            nLayers           4;			//Anzahl der Grenzschichtzellen
+
+            thicknessRatio    1.1;			//Anstiegfaktor der Zelldicke
+
+            maxFirstLayerThickness 0.0035;	//Mindestdicke der ersten Zellschicht
+
+            allowDiscontinuity 0;
+        }
+		"BottomTosbecken"
+        {
+            nLayers           6;			//Anzahl der Grenzschichtzellen
+
+            thicknessRatio    1.1;			//Anstiegfaktor der Zelldicke
+
+            maxFirstLayerThickness 0.0035;	//Mindestdicke der ersten Zellschicht
+
+            allowDiscontinuity 0;
+        }
+		"BottomFrontWeir"
+        {
+            nLayers           3;			//Anzahl der Grenzschichtzellen
+
+            thicknessRatio    1.1;			//Anstiegfaktor der Zelldicke
+
+            maxFirstLayerThickness 0.0035;	//Mindestdicke der ersten Zellschicht
+
+            allowDiscontinuity 0;
+        }
+    }
+
+    optimiseLayer 1;
+}
+
+renameBoundary
+{
+    defaultName fixedWalls;
+    defaultType wall;
+
+    newPatchNames
+    {
+        "Inlet"
+        {
+            type    patch;
+            newName Inlet;
+        }
+
+        "Outlet"
+        {
+            type    patch;
+            newName Outlet;
+        }
+		"Top"
+        {
+            type    patch;
+            newName Top;
+        }
+		"WeirBottom"
+        {
+            type    wall;
+            newName WeirBottom;
+        }
+		"Walls"
+        {
+            type    wall;
+            newName Walls;
+        }
+		"BottomFrontWeir"
+        {
+            type    wall;
+            newName BottomFrontWeir;
+        }
+		"BottomTosbecken"
+        {
+            type    wall;
+            newName BottomTosbecken;
+        }
+
+		/*"sideSymmetry.*"
+        {
+            type    symmetryPlane;
+            newName sideSymmetry;
+        }*/
+    }
+}
+
+enforceGeometryConstraints 1;	//stops the meshing process when it is not possible to capture all features of the input geometry
+
+
+// ************************************************************************* //
