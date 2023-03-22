@@ -18,7 +18,7 @@ FoamFile
 
 castellatedMesh on;
 snap            on;
-addLayers       on;
+addLayers       off;
 
 geometry
 {
@@ -140,6 +140,7 @@ addLayersControls
     expansionRatio 1.2;
     finalLayerThickness 0.35;     //is relativeSizes are put to false, must be changed to firstLayerThickness
     minThickness 0.0002;
+
 	nGrow 1;
     featureAngle 170;   
     slipFeatureAngle 70;
