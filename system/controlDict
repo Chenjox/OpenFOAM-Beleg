@@ -47,7 +47,7 @@ runTimeModifiable yes; 		//controlDicht manipulierbar während rechnung
 
 adjustTimeStep  on;  		//on bei Konvergenz denkbar: RECHNET COURANT ZAHL SELBER AUS!!!
 
-maxCo           0.2; 		//maxCourantZahl bei "adjustTimeStep  on": 0.9 maximal empfohlen
+maxCo           0.8; 		//maxCourantZahl bei "adjustTimeStep  on": 0.9 maximal empfohlen
 maxAlphaCo      0.2; 		//siehe maxCo
 
 maxDeltaT       0.2; 		//maximales deltaT bei "adjustTimeStep  on"
