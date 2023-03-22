@@ -159,9 +159,9 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
 
 boundaryLayers		//Grenzschichtzellen an Oberfläche
 {
-    nLayers 3;
-    thicknessRatio 1.2;
-    maxFirstLayerThickness 0.5;
+    //nLayers 3;
+    //thicknessRatio 1.2;
+    //maxFirstLayerThickness 0.5;
 
     patchBoundaryLayers
     {
