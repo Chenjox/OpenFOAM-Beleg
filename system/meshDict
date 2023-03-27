@@ -31,97 +31,97 @@ localRefinement	//Verfeinerung an Oberflächen
 {
     "WeirBottom"
     {
-		refinementThickness 0.4;
+    refinementThickness 0.4;
         additionalRefinementLevels 2;
     }
-	"BottomTosbecken"
+  "BottomTosbecken"
     {
-		refinementThickness 0.4;
+    refinementThickness 0.4;
         additionalRefinementLevels 2;
     }
-	//"BottomTosbecken"
-	//{
-	//	additionalRefinementLevels 3; 	//relative Verfeinerung bezüglich maxCellSize
-	//	refinementThickness 0.05;		//Verfeinerungsschichtdicke bezüglich maxCellSize
-	//}
+  //"BottomTosbecken"
+  //{
+  //	additionalRefinementLevels 3; 	//relative Verfeinerung bezüglich maxCellSize
+  //	refinementThickness 0.05;		//Verfeinerungsschichtdicke bezüglich maxCellSize
+  //}
 }
 
 objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
 {
-	tosbecken_koerper
-	{
-		type box;
-		additionalRefinementLevels 2;
-		centre	(13.50 3.0 1.375);
-		lengthX	13.0;
-		lengthY	6.0;
-		lengthZ	1.5;
-	}
+  tosbecken_koerper
+  {
+    type box;
+    additionalRefinementLevels 2;
+    centre	(13.50 3.0 1.375);
+    lengthX	13.0;
+    lengthY	6.0;
+    lengthZ	1.5;
+  }
 
-	//wehrkronenverfeinerung
-	//{
-	//	type box;
-	//	cellSize 0.15;
-	//	centre	(3.2 3.0 2.7);
-	//	lengthX	3.6;
-	//	lengthY	3.0;
-	//	lengthZ	3.6;
-	//}
+  //wehrkronenverfeinerung
+  //{
+  //	type box;
+  //	cellSize 0.15;
+  //	centre	(3.2 3.0 2.7);
+  //	lengthX	3.6;
+  //	lengthY	3.0;
+  //	lengthZ	3.6;
+  //}
 
-	wehrkronenverfeinerung
-	{
-		type box;
-		additionalRefinementLevels 2;
-		centre	(2.0 3.0 4.175);
-		lengthX	4.2;
-		lengthY	3.1;
-		lengthZ	0.6;
-	}
+  wehrkronenverfeinerung
+  {
+    type box;
+    additionalRefinementLevels 2;
+    centre	(2.0 3.0 4.175);
+    lengthX	6.2;
+    lengthY	3.1;
+    lengthZ	0.6;
+  }
 
-	/*
-	cone_name	//hollowcone_name
-	{
-		type cone;	//hollowCone;
-		additionalRefinementLevels 2;	//relative Verfeinerung bezüglich maxCellSize
-		p0				(0 0 0);	//Anfangspunkt Zylinder
-		p1				(1 1 1);	//Endpunkt Zylinder
-		radius0			2;			//Radius am Anfangspunkt
-		radius1			2;			//Radius am Endpunkt
-		//radius0_Inner	2;			//Innerer Radius am Anfangspunkt
-		//radius0_Outer	3;			//Äüßerer Radius am Anfangspunkt
-		//radius1_Inner	3;			//Innerer Radius am Endpunkt
-		//radius0_Outer	4;			//Äüßerer Radius am Endpunkt
-	}*/
+  /*
+  cone_name	//hollowcone_name
+  {
+    type cone;	//hollowCone;
+    additionalRefinementLevels 2;	//relative Verfeinerung bezüglich maxCellSize
+    p0				(0 0 0);	//Anfangspunkt Zylinder
+    p1				(1 1 1);	//Endpunkt Zylinder
+    radius0			2;			//Radius am Anfangspunkt
+    radius1			2;			//Radius am Endpunkt
+    //radius0_Inner	2;			//Innerer Radius am Anfangspunkt
+    //radius0_Outer	3;			//Äüßerer Radius am Anfangspunkt
+    //radius1_Inner	3;			//Innerer Radius am Endpunkt
+    //radius0_Outer	4;			//Äüßerer Radius am Endpunkt
+  }*/
 
-	//sphere 	(siehe Handbuch)
-	//line 		(siehe Handbuch)
+  //sphere 	(siehe Handbuch)
+  //line 		(siehe Handbuch)
 
 }
 
 /*surfaceMeshRefinement		//Oberflächenverfeinerung mithilfe von 3D-Dateien (stl; step, obj, etc.)
 {
-	deck
-	{
-		surfaceFile "model.obj";
-		cellSize	0.01;				//[m]
-		//additionalRefinementLevels 2;	//relative Verfeinerung bezüglich maxCellSize
-		//refinementThickness 0.05;		//Verfeinerungsschichtdicke bezüglich maxCellSize
-	}
+  deck
+  {
+    surfaceFile "model.obj";
+    cellSize	0.01;				//[m]
+    //additionalRefinementLevels 2;	//relative Verfeinerung bezüglich maxCellSize
+    //refinementThickness 0.05;		//Verfeinerungsschichtdicke bezüglich maxCellSize
+  }
 }*/
 
 /*edgeMeshRefinement
 {
-	edgeMeshExample
-	{
-		edgeFile 					"model.obj";	//.stl nicht möglich
-		additionalRefinementLevels 	5;
-		refinementThickness 		0.15;
-	}
-	cellSizeExample
-	{
-		edgeFile 					"model.obj";
-		cellSize					0.02;
-	}
+  edgeMeshExample
+  {
+    edgeFile 					"model.obj";	//.stl nicht möglich
+    additionalRefinementLevels 	5;
+    refinementThickness 		0.15;
+  }
+  cellSizeExample
+  {
+    edgeFile 					"model.obj";
+    cellSize					0.02;
+  }
 
 }*/
 
@@ -131,30 +131,30 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
 
 /*removeCellsIntersectingBoundary
 {
-	"basins"
-	{
-		keepCells 0;
-	}
+  "basins"
+  {
+    keepCells 0;
+  }
 }*/
 
 /*anisotropicSources
 {
-	planeExample
-	{
-		type plane;
-		normal 	(1 0 0);
-		origin	(2 0 0);
-		scalingDistance 0.1;
-		scalingFactor 1;
-	}
-	planeExample2
-	{
-		type plane;
-		normal 	(0 0 1);
-		origin	(0 0 1.2);
-		scalingDistance 0.5;
-		scalingFactor 1;
-	}
+  planeExample
+  {
+    type plane;
+    normal 	(1 0 0);
+    origin	(2 0 0);
+    scalingDistance 0.1;
+    scalingFactor 1;
+  }
+  planeExample2
+  {
+    type plane;
+    normal 	(0 0 1);
+    origin	(0 0 1.2);
+    scalingDistance 0.5;
+    scalingFactor 1;
+  }
 }*/
 
 
@@ -167,7 +167,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
     patchBoundaryLayers
     {
         
-		"WeirBottom"
+        "WeirBottom"
         {
             nLayers           10;			//Anzahl der Grenzschichtzellen
 
@@ -177,8 +177,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
 
             allowDiscontinuity 0;
         }
-		/**
-		"Walls"
+        "Walls"
         {
             nLayers           4;			//Anzahl der Grenzschichtzellen
 
@@ -188,7 +187,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
 
             allowDiscontinuity 0;
         }
-		"BottomTosbecken"
+        "BottomTosbecken"
         {
             nLayers           3;			//Anzahl der Grenzschichtzellen
 
@@ -198,7 +197,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
 
             allowDiscontinuity 0;
         }
-		"BottomFrontWeir"
+        "BottomFrontWeir"
         {
             nLayers           3;			//Anzahl der Grenzschichtzellen
 
@@ -208,29 +207,28 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
 
             allowDiscontinuity 0;
         }
-		**/
     }
 
     optimiseLayer 1;
 
-	optimisationParameters {
-		// number of iterations in the procedure
-		// for redcing normal variation (optional)
-		nSmoothNormals 10;
-		// maximum nurtber of iterations
-		// of the whole procedure (optional)
-		maxNumIterations 20;
-		// ratio between the maxximum layer thickness
-		// and the estimated feature Size (optional)
-		featureSizeFactor 0.4;
-		// activate 1 or deactivate C) calculation of normal
-		// (optional)
-		reCalculateNormals 1;
-		// maximum allowed thickness variation of thickness
-		// between two neighbouring points, divided by
-		// the distance between the points (optional)
-		relThicknessTol 0.1;
-	}
+  optimisationParameters {
+    // number of iterations in the procedure
+    // for redcing normal variation (optional)
+    nSmoothNormals 10;
+    // maximum nurtber of iterations
+    // of the whole procedure (optional)
+    maxNumIterations 20;
+    // ratio between the maxximum layer thickness
+    // and the estimated feature Size (optional)
+    featureSizeFactor 0.4;
+    // activate 1 or deactivate C) calculation of normal
+    // (optional)
+    reCalculateNormals 1;
+    // maximum allowed thickness variation of thickness
+    // between two neighbouring points, divided by
+    // the distance between the points (optional)
+    relThicknessTol 0.1;
+  }
 }
 
 renameBoundary
@@ -251,33 +249,33 @@ renameBoundary
             type    patch;
             newName Outlet;
         }
-		"Top"
+        "Top"
         {
             type    patch;
             newName Top;
         }
-		"WeirBottom"
+        "WeirBottom"
         {
             type    wall;
             newName WeirBottom;
         }
-		"Walls"
+        "Walls"
         {
             type    wall;
             newName Walls;
         }
-		"BottomFrontWeir"
+        "BottomFrontWeir"
         {
             type    wall;
             newName BottomFrontWeir;
         }
-		"BottomTosbecken"
+        "BottomTosbecken"
         {
             type    wall;
             newName BottomTosbecken;
         }
 
-		/*"sideSymmetry.*"
+    /*"sideSymmetry.*"
         {
             type    symmetryPlane;
             newName sideSymmetry;
