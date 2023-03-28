@@ -31,19 +31,19 @@ localRefinement	//Verfeinerung an Oberflächen
 {
     "WeirBottom"
     {
-    refinementThickness 0.4;
+        refinementThickness 0.4;
         additionalRefinementLevels 2;
     }
-  "BottomTosbecken"
+    "BottomTosbecken"
     {
-    refinementThickness 0.4;
+        refinementThickness 0.4;
         additionalRefinementLevels 2;
     }
-  //"BottomTosbecken"
-  //{
-  //	additionalRefinementLevels 3; 	//relative Verfeinerung bezüglich maxCellSize
-  //	refinementThickness 0.05;		//Verfeinerungsschichtdicke bezüglich maxCellSize
-  //}
+    "BottomTosbecken"
+    {
+      additionalRefinementLevels 2; 	//relative Verfeinerung bezüglich maxCellSize
+      refinementThickness 0.4;		//Verfeinerungsschichtdicke bezüglich maxCellSize
+    }
 }
 
 objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
