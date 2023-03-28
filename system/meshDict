@@ -176,7 +176,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
             maxFirstLayerThickness 0.0005;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
-        }**/
+        }
         "Walls"
         {
             nLayers           4;			//Anzahl der Grenzschichtzellen
@@ -186,8 +186,8 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
             maxFirstLayerThickness 0.001;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
-        }
-        /**"BottomTosbecken"
+        }**/
+        "BottomTosbecken"
         {
             nLayers           4;			//Anzahl der Grenzschichtzellen
 
@@ -206,7 +206,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
             maxFirstLayerThickness 0.002;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
-        }**/
+        }
     }
 
     optimiseLayer 1;
