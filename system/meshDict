@@ -51,7 +51,7 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
   tosbecken_koerper
   {
     type box;
-    additionalRefinementLevels 3;
+    additionalRefinementLevels 2;
     centre	(13.50 3.0 1.375);
     lengthX	13.0;
     lengthY	6.0;
@@ -71,9 +71,9 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
   wehrkronenverfeinerung
   {
     type box;
-    additionalRefinementLevels 3;
+    additionalRefinementLevels 2;
     centre	(2.0 3.0 4.175);
-    lengthX	6.2;
+    lengthX	7.2;
     lengthY	3.1;
     lengthZ	0.6;
   }
@@ -163,9 +163,10 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
     //nLayers 3;
     //thicknessRatio 1.2;
     //maxFirstLayerThickness 0.5;
-
+  
     patchBoundaryLayers
     {
+      /**
         "WeirBottom"
         {
             nLayers           8;			//Anzahl der Grenzschichtzellen
@@ -205,10 +206,10 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
             maxFirstLayerThickness 0.001;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
-        }
+        }**/
     }
 
-    optimiseLayer 1;
+  optimiseLayer 1;
 
   optimisationParameters {
     // number of iterations in the procedure
