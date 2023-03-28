@@ -51,7 +51,7 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
   tosbecken_koerper
   {
     type box;
-    additionalRefinementLevels 2;
+    additionalRefinementLevels 3;
     centre	(13.50 3.0 1.375);
     lengthX	13.0;
     lengthY	6.0;
@@ -71,7 +71,7 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
   wehrkronenverfeinerung
   {
     type box;
-    additionalRefinementLevels 2;
+    additionalRefinementLevels 3;
     centre	(2.0 3.0 4.175);
     lengthX	6.2;
     lengthY	3.1;
