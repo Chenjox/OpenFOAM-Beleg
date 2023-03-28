@@ -166,10 +166,9 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
 
     patchBoundaryLayers
     {
-        /**
         "WeirBottom"
         {
-            nLayers           4;			//Anzahl der Grenzschichtzellen
+            nLayers           8;			//Anzahl der Grenzschichtzellen
 
             thicknessRatio    1.2;			//Anstiegfaktor der Zelldicke
 
@@ -186,7 +185,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
             maxFirstLayerThickness 0.001;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
-        }**/
+        }
         "BottomTosbecken"
         {
             nLayers           4;			//Anzahl der Grenzschichtzellen
