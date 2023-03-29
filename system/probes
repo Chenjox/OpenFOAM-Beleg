@@ -3,9 +3,8 @@ probes
     functionObjectLibs ( "libsampling.so" );
     type probes;
     name probes;
-    fields(p_rgh U);
-    probeLocations
-    ((1 3 4.0));
+    fields (p_rgh U);
+    probeLocations ((1 3 4.0));
     writeControl outputTime;
     outputIntervall 1;
 }
