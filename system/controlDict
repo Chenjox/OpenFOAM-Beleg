@@ -31,7 +31,7 @@ writeControl    adjustableRunTime;
 
 writeInterval   1; 			//Ausgabeintervalle
 
-purgeWrite      30;			//0=aus | 10=nach 10 Zeitschritten wird der älteste gelöscht und der neue ausgeschrieben
+purgeWrite      60;			//0=aus | 10=nach 10 Zeitschritten wird der älteste gelöscht und der neue ausgeschrieben
 
 writeFormat     ascii;		//Dateiformat: ascii=lesbar; binär=Maschinenlesbar(kleiner)
 

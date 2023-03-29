@@ -31,19 +31,19 @@ localRefinement	//Verfeinerung an Oberflächen
 {
     "WeirBottom"
     {
-    refinementThickness 0.4;
+        refinementThickness 0.4;
         additionalRefinementLevels 2;
     }
-  "BottomTosbecken"
+    "BottomTosbecken"
     {
-    refinementThickness 0.4;
+        refinementThickness 0.4;
         additionalRefinementLevels 2;
     }
-  //"BottomTosbecken"
-  //{
-  //	additionalRefinementLevels 3; 	//relative Verfeinerung bezüglich maxCellSize
-  //	refinementThickness 0.05;		//Verfeinerungsschichtdicke bezüglich maxCellSize
-  //}
+    "BottomTosbecken"
+    {
+      additionalRefinementLevels 2; 	//relative Verfeinerung bezüglich maxCellSize
+      refinementThickness 0.4;		//Verfeinerungsschichtdicke bezüglich maxCellSize
+    }
 }
 
 objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
@@ -73,7 +73,7 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
     type box;
     additionalRefinementLevels 2;
     centre	(2.0 3.0 4.175);
-    lengthX	6.2;
+    lengthX	7.2;
     lengthY	3.1;
     lengthZ	0.6;
   }
@@ -163,15 +163,15 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
     //nLayers 3;
     //thicknessRatio 1.2;
     //maxFirstLayerThickness 0.5;
-
+  
     patchBoundaryLayers
     {
-        
+      /**
         "WeirBottom"
         {
-            nLayers           10;			//Anzahl der Grenzschichtzellen
+            nLayers           22;			//Anzahl der Grenzschichtzellen
 
-            thicknessRatio    1.1;			//Anstiegfaktor der Zelldicke
+            thicknessRatio    1.3;			//Anstiegfaktor der Zelldicke
 
             maxFirstLayerThickness 0.0005;	//Mindestdicke der ersten Zellschicht
 
@@ -179,37 +179,37 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
         }
         "Walls"
         {
-            nLayers           4;			//Anzahl der Grenzschichtzellen
+            nLayers           19;			//Anzahl der Grenzschichtzellen
 
-            thicknessRatio    1.1;			//Anstiegfaktor der Zelldicke
+            thicknessRatio    1.3;			//Anstiegfaktor der Zelldicke
 
-            maxFirstLayerThickness 0.003;	//Mindestdicke der ersten Zellschicht
+            maxFirstLayerThickness 0.001;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
         }
         "BottomTosbecken"
         {
-            nLayers           3;			//Anzahl der Grenzschichtzellen
+            nLayers           19;			//Anzahl der Grenzschichtzellen
 
-            thicknessRatio    1.1;			//Anstiegfaktor der Zelldicke
+            thicknessRatio    1.3;			//Anstiegfaktor der Zelldicke
 
-            maxFirstLayerThickness 0.002;	//Mindestdicke der ersten Zellschicht
+            maxFirstLayerThickness 0.001;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
         }
         "BottomFrontWeir"
         {
-            nLayers           3;			//Anzahl der Grenzschichtzellen
+            nLayers           19;			//Anzahl der Grenzschichtzellen
 
-            thicknessRatio    1.1;			//Anstiegfaktor der Zelldicke
+            thicknessRatio    1.3;			//Anstiegfaktor der Zelldicke
 
-            maxFirstLayerThickness 0.002;	//Mindestdicke der ersten Zellschicht
+            maxFirstLayerThickness 0.001;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
-        }
+        }**/
     }
 
-    optimiseLayer 1;
+  optimiseLayer 1;
 
   optimisationParameters {
     // number of iterations in the procedure
