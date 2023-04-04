@@ -34,12 +34,14 @@ boundaryField
 					                //Befehl für Netzverschiebung
         			                //transformPoints -translate "(0 0 -z)"
         type totalPressure;			//druckfreis Ausströmen an der Atmosphäre
+        U U;
         rho rho;
         psi none;
+        phi phi;
         gamma 1;
         p0 uniform 0;
         value uniform 0;
-        transformPoints -translate (0 0 -1.75);
+        //transformPoints -translate (0 0 -1.75);
     }
 	
 	// 4
