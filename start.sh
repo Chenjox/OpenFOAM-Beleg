@@ -1,9 +1,11 @@
+#!/usr/bin/env bash
 
+rm -r processor0 processor1 processor2 processor3
 cartesianMesh
 checkMesh
 echo "Awaiting Mesh OK Directive!"
-pause
+read -p "Press [Enter] to start renumbering Mesh"
 renumberMesh
-./conf.sh
+cp "0/alpha.water.orig" "0/alpha.water"
 setFields
 decomposePar
