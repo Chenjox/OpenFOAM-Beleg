@@ -12,3 +12,5 @@ setFields
 echo "Were Fields setted?"
 read -p "Press [Enter] to start decomposing!"
 decomposePar
+echo "Removing output from nohub"
+rm "nohup.out"
