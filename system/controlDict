@@ -23,13 +23,13 @@ startTime       0;			//Erster Zeitschritt (Anfangsrandbedingung) der Simulation;
 
 stopAt          endTime;
 
-endTime       	0.1; 		//Endzeitschritt Simulation
+endTime       	60; 		//Endzeitschritt Simulation
 
 deltaT          0.0001; 	//festgelegte Intervalle egal wenn adjustableTimeStep on (siehe unten)
 
 writeControl    adjustableRunTime; 
 
-writeInterval   0.01; 			//Ausgabeintervalle
+writeInterval   1; 			//Ausgabeintervalle
 
 purgeWrite      60;			//0=aus | 10=nach 10 Zeitschritten wird der älteste gelöscht und der neue ausgeschrieben
 
