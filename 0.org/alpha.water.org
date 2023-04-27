@@ -10,77 +10,53 @@ FoamFile
     version     2.0;
     format      ascii;
     class       volScalarField;
-    object      p_rgh;
+    location    "0";
+    object      alpha;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [1 -1 -2 0 0 0 0];
+dimensions      [0 0 0 0 0 0 0];					
 
-internalField   uniform 0;
+internalField   uniform 0;							//Luft überall voreingestellt
 
-boundaryField 
+boundaryField
 {
-	// 1
+	
     Inlet
     {
-        type zeroGradient;			//druckfreier Durchfluss
+		type            variableHeightFlowRate;		//Füllung variiert mit Wasserstand
+        lowerBound      0;
+        upperBound      0.9;
+        value           uniform 0;
     }
-
-	// 3
     Outlet
     {
-        			                //druckfreier Abfluss, der den WSP auf z=0 hält
-					                //outlet nach Erstellung auf WSP=z=0 versetzen
-					                //Befehl für Netzverschiebung
-        			                //transformPoints -translate "(0 0 -z)"
-        type totalPressure;			//druckfreis Ausströmen an der Atmosphäre
-        rho rho;
-        psi none;
-        gamma 1;
-        p0 uniform 0;
-        value uniform 0;
-        transformPoints -translate (0 0 -1.75);
-    }
-	
-	// 4
+		type            inletOutlet;				//Wasser kann frei aus-/einströmen
+        inletValue      uniform 0;					//Wassereintritt unterbinden
+        value           uniform 0;
+	}
 	Top
     {
-        type totalPressure;			//druckfreis Ausströmen an der Atmosphäre
-        rho rho;
-        psi none;
-        gamma 1;
-        p0 uniform 0;
-        value uniform 0;
+        type            inletOutlet;				//Wasser kann frei aus-/einströmen
+        inletValue      uniform 0;					//Wassereintritt unterbinden
+        value           uniform 0;
     }
-
     WeirBottom
     {
         type            zeroGradient;
-    }	
-	
+    }
 	Walls
     {
         type            zeroGradient;
     }
-	BottomTosbecken
+	BottomFrontWeir
     {
         type            zeroGradient;
     }
-    BottomFrontWeir
+    BottomTosbecken
     {
         type            zeroGradient;
     }
-	
-	/*
-	sideSymmetry
-	{
-        type           symmetryPlane;	//symmetrische RB: wenn keine Wand erwünscht
-    }
-	defaultFaces
-    {
-        type            empty;			//Für 2D-Flächen optimal
-    }
-	*/
 }
 
 // ************************************************************************* //

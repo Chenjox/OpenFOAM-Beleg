@@ -29,7 +29,7 @@ deltaT          0.0001; 	//festgelegte Intervalle egal wenn adjustableTimeStep o
 
 writeControl    adjustableRunTime; 
 
-writeInterval   1; 			//Ausgabeintervalle
+writeInterval   2; 			//Ausgabeintervalle
 
 purgeWrite      60;			//0=aus | 10=nach 10 Zeitschritten wird der älteste gelöscht und der neue ausgeschrieben
 
@@ -54,6 +54,6 @@ maxDeltaT       0.2; 		//maximales deltaT bei "adjustTimeStep  on"
 
 functions					//zusätzliche Ausgabefunktionen
 {
-    #includeFunc probes
+
 }
 // ************************************************************************* //

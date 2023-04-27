@@ -1,0 +1,80 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.2.x                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    location    "0";
+    object      U;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+inletFlowRate 5.2477; 	//m³/s
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (0 0 0); 	//ruhendes System
+
+boundaryField
+{
+	// 1
+    Inlet
+    {
+        type            variableHeightFlowRateInletVelocity;	//variable WSP-Lage/Geschwindigkeit 
+		flowRate		$inletFlowRate;							//zeigt auf oben definierten Durchfluss
+		alpha			alpha.water;							//Durchfluss für Wasser
+        value           uniform (0 0 0);
+    }
+
+	// 3
+    Outlet
+    {
+        type            pressureInletOutletVelocity;			//Freispiegelabfluss bei z=0
+        value           uniform (0 0 0);
+    }
+    
+	// 4
+	Top
+    {
+        type            pressureInletOutletVelocity;			//freies Ausströmen der Luft
+        value           uniform (0 0 0);
+    }
+
+    WeirBottom
+    {
+        type            noSlip;	
+    }
+	
+	Walls
+    {
+        type            noSlip;	
+    }
+	
+	BottomTosbecken
+    {
+        type            noSlip;	
+    }
+    BottomFrontWeir
+    {
+        type            noSlip;	
+    }
+	/*
+	sideSymmetry
+	{
+        type           symmetryPlane;			//symmetrische RB: wenn keine Wand erwünscht
+    }
+	defaultFaces
+    {
+        type            empty;					//Für 2D-Flächen optimal
+    }
+	*/	
+}
+
+
+// ************************************************************************* //

@@ -10,67 +10,60 @@ FoamFile
     version     2.0;
     format      ascii;
     class       volScalarField;
-    object      p_rgh;
+    location    "0";
+    object      nut;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [1 -1 -2 0 0 0 0];
+dimensions      [0 2 -1 0 0 0 0];
 
 internalField   uniform 0;
 
-boundaryField 
+boundaryField
 {
 	// 1
     Inlet
     {
-        type zeroGradient;			//druckfreier Durchfluss
+        type            calculated;
+        value           uniform 0;
     }
-
+	
 	// 3
     Outlet
     {
-        			                //druckfreier Abfluss, der den WSP auf z=0 hält
-					                //outlet nach Erstellung auf WSP=z=0 versetzen
-					                //Befehl für Netzverschiebung
-        			                //transformPoints -translate "(0 0 -z)"
-        type totalPressure;			//druckfreis Ausströmen an der Atmosphäre
-        rho rho;
-        psi none;
-        gamma 1;
-        p0 uniform 0;
-        value uniform 0;
-        transformPoints -translate (0 0 -1.75);
+        type            calculated;
+        value           uniform 0;
     }
 	
 	// 4
 	Top
     {
-        type totalPressure;			//druckfreis Ausströmen an der Atmosphäre
-        rho rho;
-        psi none;
-        gamma 1;
-        p0 uniform 0;
-        value uniform 0;
+        type            calculated;
+        value           uniform 0;
     }
-
-    WeirBottom
+	
+	WeirBottom
     {
-        type            zeroGradient;
-    }	
+        type            nutkWallFunction;	//Wandfunktion für dyn. turb. Energie
+        value           uniform 0;
+    }
 	
 	Walls
     {
-        type            zeroGradient;
+        type            nutkWallFunction;	//Wandfunktion für dyn. turb. Energie
+        value           uniform 0;
     }
+	
 	BottomTosbecken
     {
-        type            zeroGradient;
+        type            nutkWallFunction;	//Wandfunktion für dyn. turb. Energie
+        value           uniform 0;
     }
     BottomFrontWeir
     {
-        type            zeroGradient;
+        type            nutkWallFunction;	//Wandfunktion für dyn. turb. Energie
+        value           uniform 0;
     }
-	
 	/*
 	sideSymmetry
 	{
@@ -82,5 +75,6 @@ boundaryField
     }
 	*/
 }
+
 
 // ************************************************************************* //
