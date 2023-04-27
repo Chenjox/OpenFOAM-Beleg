@@ -34,11 +34,11 @@ localRefinement	//Verfeinerung an Oberflächen
         refinementThickness 0.4;
         additionalRefinementLevels 2;
     }
-    "BottomTosbecken"
-    {
-      additionalRefinementLevels 2; 	//relative Verfeinerung bezüglich maxCellSize
-      refinementThickness 0.4;		//Verfeinerungsschichtdicke bezüglich maxCellSize
-    }
+    //"BottomTosbecken"
+    //{
+    //  additionalRefinementLevels 2; 	//relative Verfeinerung bezüglich maxCellSize
+    //  refinementThickness 0.4;		//Verfeinerungsschichtdicke bezüglich maxCellSize
+    //}
 }
 
 objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
@@ -49,7 +49,7 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
     additionalRefinementLevels 2;
     centre	(12.0 3.0 0.875);
     lengthX	14.0;
-    lengthY	6.0;
+    lengthY	6.1;
     lengthZ	1.5;
   }
 
