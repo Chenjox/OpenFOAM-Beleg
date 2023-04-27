@@ -53,6 +53,24 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
     lengthZ	1.5;
   }
 
+  ecke_uebergang_1
+  {
+    type line;
+    additionalRefinementLevels 3;
+    p0 (8.97 1.5 -0.1)
+    p1 (8.97 1.5 1.8)
+    refinementThickness 0.3;
+  }
+
+  ecke_uebergang_2
+  {
+    type line;
+    additionalRefinementLevels 3;
+    p0 (8.97 4.5 -0.1)
+    p1 (8.97 4.5 1.8)
+    refinementThickness 0.3;
+  }
+
   //wehrkronenverfeinerung
   //{
   //	type box;
