@@ -47,8 +47,8 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
   {
     type box;
     additionalRefinementLevels 2;
-    centre	(13.50 3.0 1.375);
-    lengthX	13.0;
+    centre	(8.50 3.0 1.375);
+    lengthX	19.0;
     lengthY	6.0;
     lengthZ	1.5;
   }
@@ -67,8 +67,8 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
   {
     type box;
     additionalRefinementLevels 2;
-    centre	(2.0 3.0 4.175);
-    lengthX	7.2;
+    centre	(3.5 3.0 4.175);
+    lengthX	5.0;
     lengthY	3.1;
     lengthZ	0.6;
   }
@@ -215,7 +215,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
     maxNumIterations 20;
     // ratio between the maxximum layer thickness
     // and the estimated feature Size (optional)
-    featureSizeFactor 0.2;
+    featureSizeFactor 0.4;
     // activate 1 or deactivate C) calculation of normal
     // (optional)
     reCalculateNormals 1;
