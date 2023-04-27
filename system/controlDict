@@ -50,7 +50,7 @@ adjustTimeStep  on;  		//on bei Konvergenz denkbar: RECHNET COURANT ZAHL SELBER 
 maxCo           0.8; 		//maxCourantZahl bei "adjustTimeStep  on": 0.9 maximal empfohlen
 maxAlphaCo      0.2; 		//siehe maxCo
 
-maxDeltaT       0.001; 		//maximales deltaT bei "adjustTimeStep  on"
+maxDeltaT       0.2; 		//maximales deltaT bei "adjustTimeStep  on"
 
 functions					//zusätzliche Ausgabefunktionen
 {

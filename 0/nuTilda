@@ -20,9 +20,9 @@ internalField   uniform 1.e-11;
 
 boundaryField
 {
-    Inlet {type zeroGradient; value uniform 0.3306;}
-	Outlet {type zeroGradient; value uniform 0.3306;}
-    Top {type zeroGradient; value uniform 0.3306;}
+    Inlet {type zeroGradient; value uniform 0;}
+	Outlet {type zeroGradient; value uniform 0;}
+    Top {type zeroGradient; value uniform 0;}
 	WeirBottom {type zeroGradient; value uniform 0;}
 	Walls {type zeroGradient; value uniform 0;}	
 	BottomTosbecken {type zeroGradient; value uniform 0;}	
