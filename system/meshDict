@@ -215,7 +215,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
     maxNumIterations 20;
     // ratio between the maxximum layer thickness
     // and the estimated feature Size (optional)
-    featureSizeFactor 0.4;
+    featureSizeFactor 0.2;
     // activate 1 or deactivate C) calculation of normal
     // (optional)
     reCalculateNormals 1;
