@@ -6,7 +6,7 @@ cartesianMesh
 checkMesh
 echo "Awaiting Mesh OK Directive!"
 read -p "Press [Enter] to start renumbering Mesh"
-renumberMesh
+renumberMesh -constant -overwrite
 cp "0/alpha.water.orig" "0/alpha.water"
 setFields
 echo "Were Fields setted?"

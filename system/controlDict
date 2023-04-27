@@ -29,7 +29,7 @@ deltaT          0.0001; 	//festgelegte Intervalle egal wenn adjustableTimeStep o
 
 writeControl    adjustableRunTime; 
 
-writeInterval   2; 			//Ausgabeintervalle
+writeInterval   1; 			//Ausgabeintervalle
 
 purgeWrite      60;			//0=aus | 10=nach 10 Zeitschritten wird der älteste gelöscht und der neue ausgeschrieben
 
