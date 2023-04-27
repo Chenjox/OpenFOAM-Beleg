@@ -72,8 +72,8 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
   {
     type box;
     additionalRefinementLevels 2;
-    centre	(4.0 3.0 4.175);
-    lengthX	5.2;
+    centre	(3.0 3.0 4.175);
+    lengthX	6.2;
     lengthY	3.1;
     lengthZ	0.6;
   }
