@@ -182,11 +182,11 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
       
         "WeirBottom"
         {
-            nLayers           20;			//Anzahl der Grenzschichtzellen
+            nLayers           19;			//Anzahl der Grenzschichtzellen
 
             thicknessRatio    1.3;			//Anstiegfaktor der Zelldicke
 
-            maxFirstLayerThickness 0.0005;	//Mindestdicke der ersten Zellschicht
+            maxFirstLayerThickness 0.001;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
         }
@@ -202,11 +202,11 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
         }*/
         "BottomTosbecken"
         {
-            nLayers           20;			//Anzahl der Grenzschichtzellen
+            nLayers           19;			//Anzahl der Grenzschichtzellen
 
             thicknessRatio    1.3;			//Anstiegfaktor der Zelldicke
 
-            maxFirstLayerThickness 0.0005;	//Mindestdicke der ersten Zellschicht
+            maxFirstLayerThickness 0.001;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
         }
