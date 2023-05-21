@@ -228,10 +228,10 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
   optimisationParameters {
     // number of iterations in the procedure
     // for redcing normal variation (optional)
-    nSmoothNormals 10;
+    nSmoothNormals 20;
     // maximum nurtber of iterations
     // of the whole procedure (optional)
-    maxNumIterations 20;
+    maxNumIterations 50;
     // ratio between the maxximum layer thickness
     // and the estimated feature Size (optional)
     // featureSizeFactor 0.4;
