@@ -179,10 +179,10 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
   
     patchBoundaryLayers
     {
-      /**
+      
         "WeirBottom"
         {
-            nLayers           22;			//Anzahl der Grenzschichtzellen
+            nLayers           16;			//Anzahl der Grenzschichtzellen
 
             thicknessRatio    1.3;			//Anstiegfaktor der Zelldicke
 
@@ -192,7 +192,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
         }
         "Walls"
         {
-            nLayers           19;			//Anzahl der Grenzschichtzellen
+            nLayers           13;			//Anzahl der Grenzschichtzellen
 
             thicknessRatio    1.3;			//Anstiegfaktor der Zelldicke
 
@@ -202,11 +202,11 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
         }
         "BottomTosbecken"
         {
-            nLayers           19;			//Anzahl der Grenzschichtzellen
+            nLayers           16;			//Anzahl der Grenzschichtzellen
 
             thicknessRatio    1.3;			//Anstiegfaktor der Zelldicke
 
-            maxFirstLayerThickness 0.001;	//Mindestdicke der ersten Zellschicht
+            maxFirstLayerThickness 0.0005;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
         }
@@ -219,7 +219,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
             maxFirstLayerThickness 0.001;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
-        }**/
+        }
     }
 
   optimiseLayer 1;
