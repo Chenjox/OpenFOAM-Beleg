@@ -14,16 +14,17 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-simulationType RAS;
+simulationType LES;
 
+/*
 RAS
 {
     RASModel kEpsilon;
     turbulence on;
     printCoeffs on;
-}
+}*/
 
-/*
+
 LES	
 {
     LESModel            SpalartAllmarasIDDES;	//DES optimal mit Grenzschichtzellen
@@ -88,5 +89,5 @@ LES
         maxDeltaRatio   1.1;
 }
 }
-*/
+
 // ************************************************************************* //
