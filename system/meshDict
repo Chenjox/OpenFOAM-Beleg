@@ -182,7 +182,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
       
         "WeirBottom"
         {
-            nLayers           15;			//Anzahl der Grenzschichtzellen
+            nLayers           13;			//Anzahl der Grenzschichtzellen
 
             thicknessRatio    1.35;			//Anstiegfaktor der Zelldicke
 
@@ -202,7 +202,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
         }*/
         "BottomTosbecken"
         {
-            nLayers           15;			//Anzahl der Grenzschichtzellen
+            nLayers           13;			//Anzahl der Grenzschichtzellen
 
             thicknessRatio    1.35;			//Anstiegfaktor der Zelldicke
 
