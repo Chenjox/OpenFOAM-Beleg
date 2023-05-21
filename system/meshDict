@@ -212,7 +212,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
         }
         "BottomFrontWeir"
         {
-            nLayers           19;			//Anzahl der Grenzschichtzellen
+            nLayers           16;			//Anzahl der Grenzschichtzellen
 
             thicknessRatio    1.3;			//Anstiegfaktor der Zelldicke
 
@@ -233,14 +233,14 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
     maxNumIterations 20;
     // ratio between the maxximum layer thickness
     // and the estimated feature Size (optional)
-    featureSizeFactor 0.4;
+    // featureSizeFactor 0.4;
     // activate 1 or deactivate C) calculation of normal
     // (optional)
     reCalculateNormals 1;
     // maximum allowed thickness variation of thickness
     // between two neighbouring points, divided by
     // the distance between the points (optional)
-    relThicknessTol 0.1;
+    // relThicknessTol 0.1;
   }
 }
 
