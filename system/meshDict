@@ -190,7 +190,8 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
 
             allowDiscontinuity 0;
         }
-        /*"Walls"
+        /*
+        "Walls"
         {
             nLayers           16;			//Anzahl der Grenzschichtzellen
 
