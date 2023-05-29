@@ -71,6 +71,15 @@ objectRefinements	//Verfeinerung an virtuellen selbsterstellten Körpern
     refinementThickness 0.1;
   }
 
+  wehr_tosbecken_uebergang
+  {
+    type line;
+    additionalRefinementLevels 3;
+    p0 (8.97 4.5 0.0);
+    p1 (8.97 1.5 0.0);
+    refinementThickness 0.1;
+  }
+
   //wehrkronenverfeinerung
   //{
   //	type box;
@@ -182,9 +191,9 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
       
         "WeirBottom"
         {
-            nLayers           10;			//Anzahl der Grenzschichtzellen
+            nLayers           12;			//Anzahl der Grenzschichtzellen
 
-            thicknessRatio    1.35;			//Anstiegfaktor der Zelldicke
+            thicknessRatio    1.2;			//Anstiegfaktor der Zelldicke
 
             maxFirstLayerThickness 0.001;	//Mindestdicke der ersten Zellschicht
 
@@ -202,9 +211,9 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
         }*/
         "BottomTosbecken"
         {
-            nLayers           10;			//Anzahl der Grenzschichtzellen
+            nLayers           12;			//Anzahl der Grenzschichtzellen
 
-            thicknessRatio    1.35;			//Anstiegfaktor der Zelldicke
+            thicknessRatio    1.2;			//Anstiegfaktor der Zelldicke
 
             maxFirstLayerThickness 0.001;	//Mindestdicke der ersten Zellschicht
 
