@@ -199,17 +199,17 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
 
             allowDiscontinuity 0;
         }
-        /*
+        
         "Walls"
         {
-            nLayers           16;			//Anzahl der Grenzschichtzellen
+            nLayers           9;			//Anzahl der Grenzschichtzellen
 
-            thicknessRatio    1.35;			//Anstiegfaktor der Zelldicke
+            thicknessRatio    1.2;			//Anstiegfaktor der Zelldicke
 
-            maxFirstLayerThickness 0.0005;	//Mindestdicke der ersten Zellschicht
+            maxFirstLayerThickness 0.001;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
-        }*/
+        }
         "BottomTosbecken"
         {
             nLayers           9;			//Anzahl der Grenzschichtzellen
