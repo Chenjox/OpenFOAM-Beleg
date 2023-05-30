@@ -200,16 +200,6 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
             allowDiscontinuity 0;
         }
         
-        "Walls"
-        {
-            nLayers           9;			//Anzahl der Grenzschichtzellen
-
-            thicknessRatio    1.2;			//Anstiegfaktor der Zelldicke
-
-            maxFirstLayerThickness 0.001;	//Mindestdicke der ersten Zellschicht
-
-            allowDiscontinuity 0;
-        }
         "BottomTosbecken"
         {
             nLayers           9;			//Anzahl der Grenzschichtzellen
@@ -238,7 +228,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
   optimisationParameters {
     // number of iterations in the procedure
     // for redcing normal variation (optional)
-    nSmoothNormals 20;
+    nSmoothNormals 5;
     // maximum nurtber of iterations
     // of the whole procedure (optional)
     maxNumIterations 50;
