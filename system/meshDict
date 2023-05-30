@@ -237,7 +237,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
     // featureSizeFactor 0.4;
     // activate 1 or deactivate C) calculation of normal
     // (optional)
-    reCalculateNormals 1;
+    reCalculateNormals 0;
     // maximum allowed thickness variation of thickness
     // between two neighbouring points, divided by
     // the distance between the points (optional)
