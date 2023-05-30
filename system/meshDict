@@ -188,7 +188,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
   
     patchBoundaryLayers
     {
-      
+      /*
         "WeirBottom"
         {
             nLayers           9;			//Anzahl der Grenzschichtzellen
@@ -209,7 +209,7 @@ boundaryLayers		//Grenzschichtzellen an Oberfläche
             maxFirstLayerThickness 0.001;	//Mindestdicke der ersten Zellschicht
 
             allowDiscontinuity 0;
-        }
+        }*/
         /*
         "BottomFrontWeir"
         {
